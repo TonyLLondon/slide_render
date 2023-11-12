@@ -1,0 +1,60 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  > * {
+    flex: 1 0 50%;
+  }
+}
+
+#editor {
+  box-sizing: border-box;
+  border: 0;
+  padding: 30px;
+  font-size: 16px;
+  outline: 0;
+  resize: none;
+}
+
+#marp {
+  position: relative;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  overflow: auto;
+
+  > select {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+
+svg[data-marpit-svg] {
+  display: block;
+  will-change: transform; /* Workaround for chrome bug */
+}
+
+.slide {
+  margin: 30px;
+
+  svg[data-marpit-svg] {
+    box-shadow: 0 5px 15px rgba(#000, 0.25);
+  }
+}
